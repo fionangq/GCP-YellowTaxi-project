@@ -41,5 +41,5 @@ In the second pipeline, we transform the data using Spark then load it back to t
 - Google Cloud SDK
 - Terraform
 - Airflow locally
-- GCP account
+- GCP account: GCS and Big Query
 - Spark installed
