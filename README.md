@@ -10,15 +10,15 @@ This is an ETL pipeline to ingest NYC Yellow Taxi Records located [here](https:/
 
 #### Overview
 
-- Airflow is reponsible for the execution of the data ingestion to GCP. It is run in our Docker container.
-- Google Cloud Platform (GCP) infrastructure is provisioned by Terraform. Once we run the config files using  ```terraform apply``` command, it creates the Big Query (data warehouse) and GCS (data lake) in GCP.
+- Airflow is responsible for the execution of the data ingestion to GCP. It is run in our Docker container.
+- Google Cloud Platform (GCP) infrastructure is provisioned by Terraform. Once we run the configuration files using ```terraform apply``` command, it creates the Big Query (data warehouse) and GCS (data lake) in GCP.
 
 
 #### ETL pipeline
 
-ETL flow consists two parts: Ingestion and Transformation.
+ETL flow consists of two parts: Ingestion and Transformation.
 
-In the first pipeline, Airflow manages and executes these following tasks:
+In the first pipeline, Airflow manages and executes the following tasks:
 
 ![image](https://user-images.githubusercontent.com/107358349/177059033-297fb5e8-ca40-4bff-b4ef-539e2e2bf91d.png)
 
@@ -27,7 +27,7 @@ In the first pipeline, Airflow manages and executes these following tasks:
 - Upload data to GCS.
 - Transfer data to Big Query.
 
-In the second pipeline, we transform the data using Spark then load it back to the Big Query. Transformations perfomed include modifying column name, joining taxi zone table, ```splitting pep_pickup_datetime column```, and aggregating functions. We also add audited columns which are ```created_date``` and ```file_source```.
+In the second pipeline, we transform the data using Spark and load it back to the Big Query. Transformations performed include modifying column name, joining taxi zone table, ```splitting pep_pickup_datetime column```, and aggregating functions. We also add audited columns which are ```created_date``` and ```file_source```.
 
 
 #### Final Result
