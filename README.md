@@ -1,6 +1,6 @@
 # NYC Yellow Taxi ETL pipeline project
 
-This is an ETL pipeline to ingest NYC Yellow Taxi Records located [here](https://www1.nyc.gov/site/tlc/about/tlc-trip-record-data.page). The file is ingested, transformed and loaded to our data warehouse. The data pipeline is built using Google Cloud Storage (GCS) and Google Big Query. We use Spark as data transformation and Airflow as the orchestration for this project.
+This is an ETL pipeline to ingest NYC Yellow Taxi Records located [here](https://www1.nyc.gov/site/tlc/about/tlc-trip-record-data.page). The file is ingested, transformed and loaded to our data warehouse. The data pipeline is built using Google Cloud Storage (GCS) and Google Big Query. We use Spark as data transformation and Airflow as the pipeline orchestration for this project.
 
 ## Architecture diagram
 
