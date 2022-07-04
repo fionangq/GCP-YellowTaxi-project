@@ -1,6 +1,6 @@
 # NYC Yellow Taxi ETL pipeline project
 
-This is an ETL pipeline to ingest NYC Yellow Taxi Records located [here](https://www1.nyc.gov/site/tlc/about/tlc-trip-record-data.page). The file is ingested, transformed and loaded to our data warehouse. The data pipeline is built using Google Cloud Storage (GCS), Google Big Query. We use Spark as data transformation and Airflow as the orchestration. 
+This is an ETL pipeline to ingest NYC Yellow Taxi Records located [here](https://www1.nyc.gov/site/tlc/about/tlc-trip-record-data.page). The file is ingested, transformed and loaded to our data warehouse. The data pipeline is built using Google Cloud Storage (GCS) and Google Big Query. We use Spark as data transformation and Airflow as the orchestration for this project.
 
 ## Architecture diagram
 
@@ -22,13 +22,24 @@ In the first pipeline, Airflow manages and executes these following tasks:
 
 ![image](https://user-images.githubusercontent.com/107358349/177059033-297fb5e8-ca40-4bff-b4ef-539e2e2bf91d.png)
 
-- Data is downloaded in CSV format. 
-- Create a function to replace the file to Parquet format.
+- Download data from the website in CSV format. 
+- Convert the file to Parquet format.
 - Upload data to GCS.
 - Transfer data to Big Query.
 
-In the second pipeline, we transform the data using Spark then load it back to the Big Query. Transformations perfomed include modifying column name, joining taxi zone  table to our data, splitting datetime column, and aggregating functions.
+In the second pipeline, we transform the data using Spark then load it back to the Big Query. Transformations perfomed include modifying column name, joining taxi zone table, ```splitting pep_pickup_datetime column```, and aggregating functions. We also add audited columns which are ```created_date``` and ```file_source```.
+
+
+#### Final Result
+![Yellow_Taxi_Trip_Records.pdf](https://github.com/fionangq/GCP-YellowTaxi-project/files/9042180/Yellow_Taxi_Trip_Records.2.pdf)
 
 ## How to run the project
 
 #### Prerequisites
+- Docker and Docker-Compose
+- Python 3
+- Google Cloud SDK
+- Terraform
+- Airflow locally
+- GCP account
+- Spark installed
