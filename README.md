@@ -30,7 +30,8 @@ In the first pipeline, Airflow manages and executes the following tasks:
 In the second pipeline, we transform the data using Spark and load it back to the Big Query. Transformations performed include modifying column name, joining taxi zone table, splitting ```pep_pickup_datetime``` to year and month, and aggregating functions. We also add audited columns which are ```created_date``` and ```file_source```.
 
 #### Final Result
-![Yellow_Taxi_Trip_Records (6).pdf](https://github.com/fionangq/GCP-YellowTaxi-project/files/9050784/Yellow_Taxi_Trip_Records.6.pdf)
+![Yellow_Taxi_Trip_Records (2).pdf](https://github.com/fionangq/GCP-YellowTaxi-project/files/9050823/Yellow_Taxi_Trip_Records.2.pdf)
+
 
 
 ## How to run the project
