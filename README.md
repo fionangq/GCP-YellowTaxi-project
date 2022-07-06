@@ -4,7 +4,7 @@ This is an ETL pipeline to ingest NYC Yellow Taxi Records located [here](https:/
 
 ## Architecture diagram
 
-![Draw2](https://user-images.githubusercontent.com/107358349/177057567-3fc223c3-a3ad-4e11-a614-c78d6d39787b.png)
+![Untitled drawio (1) drawio-3](https://user-images.githubusercontent.com/107358349/177457223-c2f34117-6575-41c0-935f-2cd700f6733d.png)
 
 ## How it works
 
@@ -25,9 +25,9 @@ In the first pipeline, Airflow manages and executes the following tasks:
 - Download data from the website in CSV format. 
 - Convert the file to Parquet format.
 - Upload data to GCS.
-- Transfer data to Big Query.
+- Create external table in Big Query.
 
-In the second pipeline, we transform the data using Spark and load it back to the Big Query. Transformations performed include modifying column name, joining taxi zone table, splitting ```pep_pickup_datetime``` to year and month, and aggregating functions. We also add audited columns which are ```created_date``` and ```file_source```.
+In the second pipeline, we transform the data using Spark and load it to Big Query. Transformations performed include modifying column name, joining taxi zone table, splitting ```pep_pickup_datetime``` to year and month, and aggregating functions. We also add audited columns which are ```created_date``` and ```file_source```.
 
 #### Final Result
 ![Yellow_Taxi_Trip_Records (2).pdf](https://github.com/fionangq/GCP-YellowTaxi-project/files/9050823/Yellow_Taxi_Trip_Records.2.pdf)
